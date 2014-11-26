@@ -27,8 +27,9 @@ appService.factory('mainService', function($modal, $resource, $cookieStore, memo
 						$modalInstance.dismiss('cancel');
 					}
 					$scope.addMemo = function(memo) {
-						if (typeof(memo) != 'undefined' && typeof(memo.content) != 'undefined') {
-							memo.userName = $cookieStore.get('userName');
+						var userName = $cookieStore.get('userName');
+						if (typeof(userName) != 'undefined' && typeof(memo) != 'undefined' && typeof(memo.content) != 'undefined') {
+							memo.userName = userName;
 							memo.importance = commonUtil.switchParam(memo.importance);
 							memo.reminder = commonUtil.switchParam(memo.reminder);
 							memoRequest.memo.save(memo, function(data) {

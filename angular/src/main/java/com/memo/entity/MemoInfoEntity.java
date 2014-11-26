@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "jiangcy_memoinfo")
+@Table(name = "memoinfo")
 @Component(value = "memoEntity")
 public class MemoInfoEntity {
 	

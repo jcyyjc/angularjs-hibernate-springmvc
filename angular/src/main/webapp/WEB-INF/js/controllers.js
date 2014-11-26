@@ -1,9 +1,9 @@
 app.controller('loginController', ['$scope', '$state', '$rootScope', 'authService', '$http', '$cookieStore',
     function($scope, $state, $rootScope, authService, $http, $cookieStore) {
-		$rootScope.$on('$stateChangeStart', function(event, to, from, toState,fromParams) {
-			console.log($cookieStore.get('isLoged'))
-			console.log($cookieStore.get('userName'))
-		});
+//		$rootScope.$on('$stateChangeStart', function(event, to, from, toState,fromParams) {
+//			console.log($cookieStore.get('isLoged'))
+//			console.log($cookieStore.get('userName'))
+//		});
 		//如果cookie中发现用户的cookie时，直接跳到主页面
 		//缺点：用户的信息的安全性不强，暂时还不会在网页关闭后cookie就删除的操作
 		if ($cookieStore.get('isLoged')) {
@@ -42,8 +42,8 @@ app.controller('regisiterController', ['$scope', 'memoRequest',
 	};
 }]);
 //主页面的浮动导航栏
-app.controller('titleController',['$scope', 'authService', '$cookieStore', '$state',
-    function($scope, authService, $cookieStore, $state) {
+app.controller('titleController',['$scope', 'authService', '$cookieStore', '$state', '$rootScope',
+    function($scope, authService, $cookieStore, $state, $rootScope) {
 		$scope.userName = $cookieStore.get('userName');
 		//回到主页
 		$scope.homePage = function() {
@@ -61,9 +61,13 @@ app.controller('titleController',['$scope', 'authService', '$cookieStore', '$sta
 			$state.go('login');
 		};
 }]);
-app.controller('contentController', ['$scope', '$cookieStore',
-	function($scope, $cookieStore) {
+app.controller('contentController', ['$scope', '$cookieStore', '$rootScope', '$state',
+	function($scope, $cookieStore, $rootScope, $state) {
 		$scope.userName = $cookieStore.get('userName');
+		var isLoged = $cookieStore.get('isLoged');
+		if (typeof(isLoged) == 'undefined' || !isLoged) {
+			$state.go('login');
+		}
 }]);
 app.controller('userController', ['$scope', '$cookieStore', 'memoRequest', 'commonUtil',
     function($scope, $cookieStore, memoRequest, commonUtil) {
