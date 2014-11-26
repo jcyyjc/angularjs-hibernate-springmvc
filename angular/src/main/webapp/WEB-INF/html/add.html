@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <button class="close" type="button" ng-click="cancel()">&times;</button>
+  <h4 class="modal-title">添加备忘</h4>
+</div>
+<div class="modal-body">
+<!--  	<div class="form-group">
+		<label class="control-label">执行人:</label>
+		<input class="form-control" type="text" ng-model="memo.userName">	
+	</div> -->
+  <form name="form" novalidate>
+    <div class="form-group">
+      <label class="control-label">备忘内容:</label>
+      <textarea class="form-control" rows="4" ng-model="memo.content" required></textarea>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="memo.importance">重要
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+     	  <input type="checkbox" ng-model="memo.reminder" ng-value="1">提醒
+     	</label>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="addMemo(memo)" ng-disabled="form.$invalid">确定</button>
+</div>

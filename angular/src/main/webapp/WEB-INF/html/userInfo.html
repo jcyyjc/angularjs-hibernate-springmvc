@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <img class="img-thumbnail" alt="" src="./images/photo.jpg">
+      <p class="text-center text-primary"><strong>{{userName}}</strong></p>
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        <ul class="nav nav-tabs">
+          <li ui-sref-active="active"><a ui-sref="user.detail">个人资料</a></li>
+          <li ui-sref-active="active"><a ui-sref="user.password">修改密码</a></li>
+        </ul><br>
+        <div ui-view="userDetailView"></div>
+      </div>
+    </div>
+  </div>
+</div>

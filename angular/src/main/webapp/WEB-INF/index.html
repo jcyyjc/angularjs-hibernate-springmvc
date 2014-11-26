@@ -1,0 +1,32 @@
+<!docType>
+<html ng-app="memo">
+	<head>
+		<title>备忘录</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="./lib/jquery.js"></script>
+		<script src="./lib/angular.js"></script>
+		<script src="./lib/angular-ui-router.js"></script>
+		<script src="./lib/angular-resource.js"></script>
+		<script src="./lib/angular-cookies.js"></script>
+		<script src="./lib/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="./lib/angular-bootstrap/ui-bootstrap.js"></script>
+		<script src="./lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<script src="./js/route.js"></script>
+		<script src="./js/controllers.js"></script>
+		<script src="./js/services.js"></script>
+		<link rel="styleSheet" href="./lib/bootstrap/dist/css/bootstrap.css">
+		<link rel="styleSheet" href="./lib/bootstrap/dist/css/bootstrap-theme.css">
+		<link rel="styleSheet" href="./css/app.css">
+	</head>
+	<body>
+		<div id="main">
+		<div ui-view="naivView"></div>
+		<div ui-view="mainView"></div>
+		<footer>
+			<hr>
+			<div class="text-center">@copyright 备忘录</div>
+			<hr>
+		</footer>
+		</div>
+	</body>
+</html>

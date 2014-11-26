@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-10"><h2>备忘录&nbsp;<small>记录生活中的点点滴滴</small></h2></div>
+  <div class="col-md-2"><button class="btn btn-primary" type="button" ng-click="add()">添加备忘</button></div>
+</div><hr>
+<ul class="nav nav-pills">
+  <li ui-sref-active="active"><a ui-sref="main.content.list({status:2})">全部</a></li>
+  <li ui-sref-active="active"><a ui-sref="main.content.list({status:0})">进行中</a></li>
+  <li ui-sref-active="active"><a ui-sref="main.content.list({status:1})">已完成</a></li>
+</ul><br>
+<div ui-view="listView"></div>

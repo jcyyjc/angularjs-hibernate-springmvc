@@ -1,0 +1,12 @@
+<div  class="col-md-4">
+  <label class="control-label">用户名：</label>
+  <span class="text-primary">{{user.userName}}</span><br>
+  <label class="control-label">性别：</label>
+  <span class="text-primary" ng-if="user.sex == 1">男</span>
+  <span class="text-primary" ng-if="user.sex == 0">女</span><br>
+  <label class="control-label">Email：</label>
+  <span class="text-primary">{{user.email}}</span><br><br>
+  <div class="pull-right">
+    <button class="btn btn-primary" type="button" ng-click="goModify()">修改个人信息</button>
+  </div>
+</div>

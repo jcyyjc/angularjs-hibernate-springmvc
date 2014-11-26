@@ -1,0 +1,48 @@
+<div ng-repeat="memo in memos">
+  <div>
+    <div class="row">
+      <div class="col-md-1">
+        <img class="img-thumbnail" src="./images/photo2.jpg">
+      </div>
+      <div class="col-md-11">
+        <label class="control-label text-primary">{{memo.userName}}</label><br>
+        <span class="text-muted small">{{memo.createTime}}</span>&nbsp;&nbsp;
+        <span class="text-danger small" ng-if="memo.importance == 1">重要</span>
+        <span class="text-success small" ng-if="memo.importance == 0">不重要</span>
+      </div>
+    </div>
+    <p class="text-left well well-sm">{{memo.content}}</p>
+    <small>
+      <a ng-click="modify(memo.id)">修改</a>|
+      <a ng-click="deleteMemo(memo.id)">删除</a>|
+      <a>关注</a>
+      <span ng-if="memo.status == 0">
+        |&nbsp;<a ng-click="changeStatus(memo.id)">标志为已完成</a>
+      </span>
+    </small>
+  </div><hr>
+</div><hr>
+<div ng-repeat="memo in memos">
+  <div>
+    <div class="row">
+      <div class="col-md-1">
+        <img class="img-thumbnail" src="./images/photo2.jpg">
+      </div>
+      <div class="col-md-11">
+        <label class="control-label text-primary">{{memo.userName}}</label><br>
+        <span class="text-muted small">{{memo.createTime}}</span>&nbsp;&nbsp;
+        <span class="text-danger small" ng-if="memo.importance == 1">重要</span>
+        <span class="text-success small" ng-if="memo.importance == 0">不重要</span>
+      </div>
+    </div>
+    <p class="text-left well well-sm">{{memo.content}}</p>
+    <small>
+      <a ng-click="modify(memo.id)">修改</a>|
+      <a ng-click="deleteMemo(memo.id)">删除</a>|
+      <a>关注</a>
+      <span ng-if="memo.status == 0">
+        |&nbsp;<a ng-click="changeStatus(memo.id)">标志为已完成</a>
+      </span>
+    </small>
+  </div><hr>
+</div><hr>

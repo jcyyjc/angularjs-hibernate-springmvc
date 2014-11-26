@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand"><strong>备忘录</strong></a>
+    </div>
+  <div>
+    <ul class="nav navbar-nav navbar-left">
+      <li><a ng-click="homePage()"><span class="glyphicon glyphicon-home"></span>主页</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+          <span class="glyphicon glyphicon-cog"></span>管理
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a>好友管理</a></li>
+          <li><a ng-click="userInfo()">个人设置</a></li>
+          <li><a ng-click="logout()">退出</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>
+          <input type="text" placeholder="输入查找内容" size="40">
+          <span class="glyphicon glyphicon-search"></span>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a ui-sref="user.detail">
+          <span class="glyphicon glyphicon-user"></span>{{userName}}
+        </a>
+      </li>
+      <li>
+        <a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span>退出</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
